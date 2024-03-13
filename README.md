@@ -9,5 +9,7 @@ The file Part1, Part2 and Part3 is the code for the Part-1, Part-2, Part-3 in th
   2. In the Part4 the code files have a variable num_clusters which can be changed to get the clusters as 2,3,4 accordingly as required in the assignemnt.
 
 
-The path to the dataset is to be changed accordingly for each code file. By defauly I have used the matlab Drive path which I have used to derive the results. 
+* The path to the dataset is to be changed accordingly for each code file. By defauly I have used the matlab Drive path which I have used to derive the results.
+* The "Outputs" File contains the outputs for the code files against the given datasets.
+* The "ResultsAndAnalysis" file contains the analysis and comparision of the results of the outputs. 
 
