@@ -76,6 +76,34 @@ end
 
 num_classes = length(unique(class_labels));
 
+% Compute silhouette scores for dot product kernel clustering
+silhouette_dp = silhouette(squared_euclidean_distance, idx_dp);
+
+% Compute silhouette scores for polynomial kernel clustering
+silhouette_poly = silhouette(polynomial_kernel, idx_poly);
+
+% Display average silhouette scores
+avg_silhouette_dp = mean(silhouette_dp);
+avg_silhouette_poly = mean(silhouette_poly);
+
+disp('Average Silhouette Score using dot product kernel clustering:');
+disp(avg_silhouette_dp);
+disp('Average Silhouette Score using polynomial kernel clustering:');
+disp(avg_silhouette_poly);
+
+% Plot silhouette histograms
+figure;
+subplot(1, 2, 1);
+histogram(silhouette_dp, 'Normalization', 'probability');
+title('Silhouette Score Distribution (Dot Product Kernel)');
+xlabel('Silhouette Score');
+ylabel('Frequency');
+subplot(1, 2, 2);
+histogram(silhouette_poly, 'Normalization', 'probability');
+title('Silhouette Score Distribution (Polynomial Kernel)');
+xlabel('Silhouette Score');
+ylabel('Frequency');
+
 % Check for presence of diagonal sub-matrices
 if exist('class_labels', 'var') && ~isempty(class_labels)
   disp('** Analysis of Diagonal Sub-Matrices (assuming class labels in file names) **');
